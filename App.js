@@ -1,13 +1,13 @@
-const FearServer = require('../../backend/src/FEARServer');
+const Fear = require('@feardread/fear');
 
 async function main() {
-    const server = new FearServer();
+    const server = new Fear.FearServer();
     
     server.initialize({
             root: __dirname,
             app: '/public',
             build: 'public',
-            basePath: '/fear/sites/ghap'
+            basePath: ''
         })
         .then(() => server.startServer())
         .catch((error) => process.exit(1))
